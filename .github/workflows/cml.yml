@@ -13,4 +13,4 @@ jobs:
 
           # Your ML workflow goes here
           pip install -r requirements.txt
-          python Preliminary_Model_Testing.ipynb
+          python flask_test2.py
