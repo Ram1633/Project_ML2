@@ -1,0 +1,32 @@
+name: autopy-lot
+on: [push]
+
+jobs:
+  build:
+    name: autopy-lot
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: autopy-lot 
+        uses: deep5050/autopy-lot@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN}}
+          output_dir: './Unit_Test/'
+
+
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Python 3
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+      - name: Run tests with pytest
+        run:
+          pytest Project_ML2/Unit_Test/Final_project_updated0331.py
