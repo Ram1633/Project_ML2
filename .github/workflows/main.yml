@@ -29,4 +29,4 @@ jobs:
           pip install pytest
       - name: Run tests with pytest
         run:
-          pytest Final_project_updated0331.py
+          pytest Project_ML2/Unit_Test/Final_project_updated0331.py
